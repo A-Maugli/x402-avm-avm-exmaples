@@ -1,11 +1,16 @@
 # x402-avm-examples
 
-A collection of examples demonstrating the X402 protocol implementation on Algorand, 
+A collection of simple examples demonstrating the use of X402 protocol on Algorand, 
 enabling micropayments for paid content.
+
+## ⚠️ Important Note
+All accounts and addresses shown in the `.env` files and throughout this documentation 
+are **Algorand Testnet accounts**. These should never be used on Mainnet. 
+Always use separate accounts for production environments.
 
 ## Prerequisites
 
-Before running any components, you'll need to set up three Algorand accounts:
+Before running any components, you'll need to set up three Algorand Testnet accounts:
 
 ### Facilitator Account
 
@@ -36,6 +41,9 @@ This account sends USDC to access paid content.
 4. Opt into test USDC (Asset ID: 10458941) using the [Transaction Wizard](https://lora.algokit.io/mainnet/transaction-wizard)
 5. Obtain test USDC from the [Circle Faucet](https://faucet.circle.com/)
 
+Alternatively, you can use the preconfigured values provided in the `.env` files. 
+If the amounts are depleted, don't forget to refill them using the faucets above.
+
 ## Algorand Account Generation
 
 Generate a new Algorand account with the following commands:
@@ -60,7 +68,6 @@ The facilitator handles transaction fee payments and coordinates the payment flo
 
 ```
 cd facilitator
-cp .env_copy .env
 npm i
 node facilitator-service.ts
 ```
@@ -80,7 +87,6 @@ A simple server that serves paid content without a paywall UI.
 
 ```
 cd ../server
-cp .env_copy .env
 npm i
 node index-express.ts
 ```
@@ -92,7 +98,7 @@ $ node index-express.ts
 Server listening at http://localhost:4021
 ```
 
-CTRL+Click on `http://localhost:4021` and try to get URL `http://localhost/weather_paid`
+CTRL+Click on `http://localhost:4021` and try to get URL `http://localhost:4021/weather_paid`
 
 ## 3. Server with Paywall
 
@@ -100,7 +106,6 @@ A server that includes a paywall UI for paid content access.
 
 ```
 cd ../server-with-paywall
-cp .env_copy .env
 npm i
 node index-express.ts
 ```
@@ -114,7 +119,7 @@ s://dotenvx.com/prebuild
 Server listening at http://localhost:4022
 ```
 
-CTRL+Click on `http://localhost:4022` and try to get URL `http://localhost/weather_paid`
+CTRL+Click on `http://localhost:4022` and try to get URL `http://localhost:4022/weather_paid`
 
 ## 4. Client Without Wallet
 
@@ -122,7 +127,6 @@ A client that demonstrates making payments without a browser wallet.
 
 ```
 cd ../client_wo_wallet
-cp .env_copy .env
 npm i
 node client.ts
 ```
