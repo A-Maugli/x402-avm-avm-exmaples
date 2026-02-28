@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "./generate-algorand-account"
+    },
+    {
+      "path": "./facilitator"
+    },
+    {
+      "path": "./server"
+    },
+    {
+      "path": "./server-with-paywall"
+    },
+    {
+      "path": "./client-wo-wallet"
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 4,
+    "files.autoSave": "afterDelay"
+  }
+}
